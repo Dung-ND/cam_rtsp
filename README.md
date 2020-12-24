@@ -10,3 +10,11 @@ const std::string pipeline("rtspsrc location=rtsp://192.168.100.19:8554/live lat
 cap:
 
 gst-launch-1.0 udpsrc port=5000 ! application/x-rtp,media=video,payload=26,clock-rate=90000,encoding-name=H264 ! rtph264depay ! avdec_h264 ! videoconvert ! autovideosink
+
+Build OpenCV with Gstreamer:
+
+cmake     -DCMAKE_BUILD_TYPE=Release     -DCMAKE_INSTALL_PREFIX=/mnt/F/MYNT-EYE-D-SDK/ocv_340_gstreamer     -DENABLE_CXX11=ON     -DBUILD_DOCS=OFF     -DBUILD_EXAMPLES=OFF     -DBUILD_JASPER=OFF     -DBUILD_OPENEXR=OFF     -DBUILD_PERF_TESTS=OFF     -DBUILD_TESTS=OFF     -DWITH_EIGEN=ON     -DWITH_FFMPEG=ON     -DWITH_OPENMP=ON -DWITH_GSTREAMER=ON ..
+
+sudo apt install gstreamer1.0-rtsp
+
+also gstreamer bad and good
